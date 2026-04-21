@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENC252 CyberSec Hub — Eastern NC Cybersecurity Community</title>
+  <meta name="description" content="ENC252 CyberSec Hub connects cybersecurity professionals across Greenville, New Bern, Jacksonville, and Wilson, NC. Forum, jobs, meetups, projects, and mentorship.">
+  <meta name="keywords" content="cybersecurity, Eastern North Carolina, ENC252, Greenville NC, New Bern, Jacksonville NC, Wilson NC, infosec jobs, cyber meetup">
+  <meta name="author" content="ENC252">
+  <link rel="canonical" href="https://enc252.org">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="ENC252 CyberSec Hub — Eastern NC">
+  <meta property="og:description" content="The community hub for cybersecurity professionals in Eastern NC.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://enc252.org">
+  <meta property="og:image" content="https://enc252.org/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0B1D3A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0B1D3A',
+            teal: '#00BFA6',
+            'teal-dark': '#009e8a'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-variant-ligatures: common-ligatures; -webkit-font-smoothing: antialiased; }
+    .glass { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .focus-ring:focus-visible { outline: 3px solid #00BFA6; outline-offset: 2px; }
+    .high-contrast { filter: contrast(1.35) saturate(1.2); }
+    .high-contrast * { border-color: currentColor !important; }
+    .dyslexic { font-family: 'Inter', 'Comic Sans MS', sans-serif !important; letter-spacing: 0.03em; line-height: 1.75 !important; }
+    .reduce-motion * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+    ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-thumb { background: #00BFA6; border-radius: 8px; }
+    .sr-only:focus:not(:focus-visible) { clip: rect(0,0,0,0); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ENC252 CyberSec Hub",
+    "url": "https://enc252.org",
+    "description": "Community hub for cybersecurity professionals in Eastern North Carolina.",
+    "logo": "https://enc252.org/logo.png",
+    "areaServed": [
+      {"@type": "City", "name": "Greenville", "address": {"addressRegion": "NC"}},
+      {"@type": "City", "name": "New Bern", "address": {"addressRegion": "NC"}},
+      {"@type": "City", "name": "Jacksonville", "address": {"addressRegion": "NC"}},
+      {"@type": "City", "name": "Wilson", "address": {"addressRegion": "NC"}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ENC252 CyberSec Hub",
+    "url": "https://enc252.org",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://enc252.org/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-[#070f1f] dark:text-slate-100 font-sans antialiased selection:bg-teal/30 selection:text-navy">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-teal text-navy font-bold px-4 py-2 rounded-lg z-[100]">Skip to content</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-slate-200/60 dark:border-white/10 bg-white/70 dark:bg-navy/70 glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-lg bg-navy dark:bg-teal flex items-center justify-center shadow-lg shadow-teal/10">
+            <span class="font-mono font-bold text-teal dark:text-navy text-sm">252</span>
+          </div>
+          <div>
+            <div class="font-bold tracking-tight leading-none">ENC252</div>
+            <div class="text-[11px] uppercase tracking-widest text-slate-500 dark:text-slate-400 -mt-0.5">CyberSec Hub</div>
+          </div>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium" aria-label="Primary">
+          <a href="#forum" class="hover:text-teal focus-ring rounded">Forum</a>
+          <a href="#jobs" class="hover:text-teal focus-ring rounded">Jobs</a>
+          <a href="#meetups" class="hover:text-teal focus-ring rounded">Meetups</a>
+          <a href="#projects" class="hover:text-teal focus-ring rounded">Projects</a>
+          <a href="#members" class="hover:text-teal focus-ring rounded">Members</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <!-- Accessibility -->
+          <div class="hidden sm:flex items-center gap-1 p-1 rounded-lg bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10" role="toolbar" aria-label="Accessibility">
+            <button id="a11y-font-down" class="p-1.5 rounded hover:bg-white dark:hover:bg-white/10 focus-ring" aria-label="Decrease font size" title="Decrease text">A-</button>
+            <button id="a11y-font-up" class="p-1.5 rounded hover:bg-white dark:hover:bg-white/10 focus-ring" aria-label="Increase font size" title="Increase text">A+</button>
+            <button id="a11y-contrast" class="p-1.5 rounded hover:bg-white dark:hover:bg-white/10 focus-ring" aria-label="Toggle high contrast" title="High contrast">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 0 0 20z"/></svg>
+            </button>
+            <button id="a11y-motion" class="p-1.5 rounded hover:bg-white dark:hover:bg-white/10 focus-ring" aria-label="Reduce motion" title="Reduce motion">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M6 18L18 6"/></svg>
+            </button>
+          </div>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 focus-ring" aria-label="Toggle dark mode" title="Toggle theme">
+            <svg id="icon-sun" class="w-5 h-5 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+            <svg id="icon-moon" class="w-5 h-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button id="mobile-menu" class="md:hidden p-2 rounded-lg border border-slate-200 dark:border-white/10 focus-ring" aria-label="Open menu" aria-expanded="false">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      <div id="mobile-nav" class="md:hidden hidden pb-4">
+        <nav class="grid grid-cols-2 gap-2 text-sm">
+          <a href="#forum" class="p-2 rounded bg-slate-100 dark:bg-white/5">Forum</a>
+          <a href="#jobs" class="p-2 rounded bg-slate-100 dark:bg-white/5">Jobs</a>
+          <a href="#meetups" class="p-2 rounded bg-slate-100 dark:bg-white/5">Meetups</a>
+          <a href="#projects" class="p-2 rounded bg-slate-100 dark:bg-white/5">Projects</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-navy via-[#0B1D3A] to-[#0a162e]"></div>
+      <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#00BFA6 1px, transparent 1px); background-size: 24px 24px;"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal/10 text-teal border border-teal/20 text-xs font-medium mb-5">
+              <span class="w-2 h-2 rounded-full bg-teal animate-pulse"></span>
+              Greenville • New Bern • Jacksonville • Wilson
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white">Eastern NC's cybersecurity community, united.</h1>
+            <p class="mt-5 text-lg text-slate-300 max-w-xl">A single-page hub for ENC252 professionals: share intel, find local jobs, RSVP to meetups, ship projects, and grow your network — all with accessibility and privacy by default.</p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#jobs" class="px-5 py-3 rounded-xl bg-teal text-navy font-semibold hover:bg-teal-dark focus-ring shadow-lg shadow-teal/20">Browse 12 Local Jobs</a>
+              <a href="#forum" class="px-5 py-3 rounded-xl bg-white/10 text-white hover:bg-white/15 border border-white/20 focus-ring">Join the Forum</a>
+            </div>
+            <div class="mt-6 flex items-center gap-6 text-sm text-slate-400">
+              <div class="flex -space-x-2">
+                <img alt="" class="w-8 h-8 rounded-full ring-2 ring-navy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%2300BFA6'/%3E%3Ctext x='50%25' y='55%25' font-family='Inter' font-size='14' fill='%230B1D3A' text-anchor='middle' dominant-baseline='middle'%3EMC%3C/text%3E%3C/svg%3E"/>
+                <img alt="" class="w-8 h-8 rounded-full ring-2 ring-navy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%231e3a8a'/%3E%3Ctext x='50%25' y='55%25' font-family='Inter' font-size='14' fill='white' text-anchor='middle' dominant-baseline='middle'%3ESR%3C/text%3E%3C/svg%3E"/>
+                <img alt="" class="w-8 h-8 rounded-full ring-2 ring-navy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%2300997a'/%3E%3Ctext x='50%25' y='55%25' font-family='Inter' font-size='14' fill='white' text-anchor='middle' dominant-baseline='middle'%3EJT%3C/text%3E%3C/svg%3E"/>
+              </div>
+              <span>247 members across ENC</span>
+            </div>
+          </div>
+          <div class="lg:justify-self-end w-full max-w-lg">
+            <div class="relative rounded-2xl border border-white/10 bg-white/5 p-2 shadow-2xl">
+              <div class="rounded-xl bg-slate-900/80 p-5">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="text-xs uppercase tracking-widest text-slate-400">Live Feed</div>
+                  <div class="text-xs text-teal font-mono">enc252://status</div>
+                </div>
+                <div class="space-y-3 font-mono text-sm">
+                  <div class="flex gap-3"><span class="text-teal">19:42</span><span class="text-slate-300">[Greenville] New SOC analyst thread trending</span></div>
+                  <div class="flex gap-3"><span class="text-teal">18:07</span><span class="text-slate-300">[New Bern] Meetup RSVP 41/50</span></div>
+                  <div class="flex gap-3"><span class="text-teal">16:21</span><span class="text-slate-300">[Jacksonville] Honeynet picked up Mirai scan</span></div>
+                  <div class="flex gap-3"><span class="text-teal">14:55</span><span class="text-slate-300">[Wilson] GRC role posted — hybrid</span></div>
+                </div>
+                <div class="mt-5 grid grid-cols-3 gap-3 text-center">
+                  <div class="rounded-lg bg-white/5 p-3 border border-white/10"><div class="text-2xl font-bold text-white">12</div><div class="text-[11px] text-slate-400 uppercase">Jobs</div></div>
+                  <div class="rounded-lg bg-white/5 p-3 border border-white/10"><div class="text-2xl font-bold text-white">5</div><div class="text-[11px] text-slate-400 uppercase">Meetups</div></div>
+                  <div class="rounded-lg bg-white/5 p-3 border border-white/10"><div class="text-2xl font-bold text-white">18</div><div class="text-[11px] text-slate-400 uppercase">Projects</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forum -->
+    <section id="forum" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
+      <div class="flex items-end justify-between gap-4 mb-8">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Forum</h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-1">Threat intel, career talk, and local news. Be kind, stay on-topic.</p>
+        </div>
+        <button id="new-thread" class="px-4 py-2 rounded-xl bg-navy text-white dark:bg-teal dark:text-navy font-semibold hover:opacity-90 focus-ring">New Thread</button>
+      </div>
+
+      <div class="grid lg:grid-cols-4 gap-6">
+        <aside class="lg:col-span-1">
+          <div class="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-4 sticky top-24">
+            <label for="forum-search" class="sr-only">Search forum</label>
+            <div class="relative">
+              <input id="forum-search" placeholder="Search threads..." class="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-navy/50 focus-ring">
+              <svg class="w-4 h-4 absolute left-3 top-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <div class="mt-4 space-y-1 text-sm" role="tablist" aria-label="Forum categories">
+              <button data-cat="all" class="forum-cat w-full text-left px-3 py-2 rounded-lg bg-slate-100 dark:bg-white/10 font-medium">All</button>
+              <button data-cat="Threat Intel" class="forum-cat w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10">Threat Intel</button>
+              <button data-cat="Jobs" class="forum-cat w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10">Jobs & Careers</button>
+              <button data-cat="Meetups" class="forum-cat w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10">Meetups</button>
+              <button data-cat="Projects" class="forum-cat w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10">Projects</button>
+            </div>
+          </div>
+        </aside>
+
+        <div class="lg:col-span-3">
+          <div id="forum-list" class="space-y-3" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jobs -->
+    <section id="jobs" class="bg-white dark:bg-navy/40 border-y border-slate-200 dark:border-white/5 py-16 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Job Board</h2>
+            <p class="text-slate-600 dark:text-slate-400 mt-1">12 curated roles across ENC. Filters work instantly, no tracking.</p>
+          </div>
+          <div class="text-sm text-slate-500">Updated weekly • <button id="job-alert" class="underline hover:text-teal focus-ring rounded">Get alerts</button></div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-4 mb-6">
+          <div class="grid md:grid-cols-4 gap-3">
+            <div>
+              <label class="text-xs text-slate-500">Location</label>
+              <select id="filter-location" class="w-full mt-1 px-3 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-navy/50 focus-ring">
+                <option value="all">All ENC</option>
+                <option>Greenville</option>
+                <option>New Bern</option>
+                <option>Jacksonville</option>
+                <option>Wilson</option>
+                <option>Remote</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs text-slate-500">Type</label>
+              <select id="filter-type" class="w-full mt-1 px-3 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-navy/50 focus-ring">
+                <option value="all">Any type</option>
+                <option>Full-time</option>
+                <option>Contract</option>
+                <option>Part-time</option>
+                <option>Internship</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs text-slate-500">Level</label>
+              <select id="filter-level" class="w-full mt-1 px-3 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-navy/50 focus-ring">
+                <option value="all">Any level</option>
+                <option>Entry</option>
+                <option>Mid</option>
+                <option>Senior</option>
+                <option>Lead</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs text-slate-500">Search</label>
+              <input id="filter-search" placeholder="e.g., Splunk, GRC" class="w-full mt-1 px-3 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-navy/50 focus-ring">
+            </div>
+          </div>
+        </div>
+
+        <div id="jobs-list" class="grid md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- Meetups -->
+    <section id="meetups" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
+      <div class="flex items-end justify-between gap-4 mb-8">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Meetups & Calendar</h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-1">RSVP in one click. Add to calendar via .ics.</p>
+        </div>
+      </div>
+      <div id="meetups-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="bg-white dark:bg-navy/40 border-y border-slate-200 dark:border-white/5 py-16 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Projects Board</h2>
+            <p class="text-slate-600 dark:text-slate-400 mt-1">Build in public. Find collaborators across ENC.</p>
+          </div>
+          <button id="propose-project" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-white/15 hover:bg-slate-50 dark:hover:bg-white/5 focus-ring">Propose Project</button>
+        </div>
+        <div id="projects-list" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+      </div>
+    </section>
+
+    <!-- Members -->
+    <section id="members" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
+      <div class="flex items-end justify-between gap-4 mb-8">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Member Profiles</h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-1">Opt-in directory. Control what you share.</p>
+        </div>
+        <button id="edit-profile" class="px-4 py-2 rounded-xl bg-navy text-white dark:bg-teal dark:text-navy font-semibold hover:opacity-90 focus-ring">Edit My Profile</button>
+      </div>
+      <div id="members-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"></div>
+    </section>
+
+    <!-- Newsletter -->
+    <section id="newsletter" class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-navy to-[#132b55]"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Get the ENC252 Weekly</h2>
+            <p class="text-slate-300 mt-2">Jobs, meetups, and threat notes for Eastern NC. No spam, unsubscribe anytime.</p>
+          </div>
+          <form id="newsletter-form" class="flex gap-2" aria-label="Newsletter signup" novalidate>
+            <label for="email" class="sr-only">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@company.com" class="flex-1 px-4 py-3 rounded-xl border border-white/20 bg-white/10 text-white placeholder-slate-300 focus-ring" autocomplete="email">
+            <button type="submit" class="px-5 py-3 rounded-xl bg-teal text-navy font-semibold hover:bg-teal-dark focus-ring">Subscribe</button>
+          </form>
+        </div>
+        <p class="text-xs text-slate-400 mt-3">By subscribing you agree to our community code of conduct. We never sell data.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-white/10 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-navy dark:bg-teal flex items-center justify-center">
+            <span class="font-mono font-bold text-teal dark:text-navy text-xs">252</span>
+          </div>
+          <div class="text-sm">© <span id="year"></span> ENC252 CyberSec Hub • Eastern NC</div>
+        </div>
+        <div class="flex items-center gap-5 text-sm">
+          <a href="#" class="hover:text-teal focus-ring rounded">Code of Conduct</a>
+          <a href="#" class="hover:text-teal focus-ring rounded">Privacy</a>
+          <a href="#forum" class="hover:text-teal focus-ring rounded">Contact</a>
+          <span class="text-slate-500">v2.0</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-4 right-4 z-50 hidden">
+    <div class="px-4 py-3 rounded-xl bg-navy text-white dark:bg-teal dark:text-navy shadow-xl border border-white/10 min-w-[260px]">
+      <div class="flex items-start gap-3">
+        <div class="mt-0.5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div>
+          <div id="toast-title" class="font-semibold leading-tight">Done</div>
+          <div id="toast-desc" class="text-sm opacity-80"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <dialog id="modal" class="rounded-2xl p-0 w-full max-w-xl backdrop:bg-black/60 border border-slate-200 dark:border-white/10">
+    <form method="dialog">
+      <div class="p-5 border-b border-slate-200 dark:border-white/10 flex items-center justify-between">
+        <h3 id="modal-title" class="font-semibold text-lg">Title</h3>
+        <button class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10 focus-ring" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div id="modal-body" class="p-5"></div>
+    </form>
+  </dialog>
+
+  <script>
+  // ---------- Utilities ----------
+  const $ = (s, r=document) => r.querySelector(s);
+  const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+  const toast = (title, desc='') => {
+    $('#toast-title').textContent = title;
+    $('#toast-desc').textContent = desc;
+    $('#toast').classList.remove('hidden');
+    setTimeout(()=>$('#toast').classList.add('hidden'), 2600);
+  };
+  const store = {
+    get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d } catch { return d } },
+    set(k, v) { localStorage.setItem(k, JSON.stringify(v)) }
+  };
+
+  // ---------- Theme ----------
+  const applyTheme = () => {
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.classList.toggle('dark', saved ? saved==='dark' : prefersDark);
+  };
+  applyTheme();
+  $('#theme-toggle').addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  });
+
+  // ---------- A11y ----------
+  let fontSize = 100;
+  $('#a11y-font-up').onclick = () => { fontSize = Math.min(125, fontSize+6.25); document.documentElement.style.fontSize = fontSize+'%'; toast('Text size increased') };
+  $('#a11y-font-down').onclick = () => { fontSize = Math.max(87.5, fontSize-6.25); document.documentElement.style.fontSize = fontSize+'%'; toast('Text size decreased') };
+  $('#a11y-contrast').onclick = () => { document.body.classList.toggle('high-contrast'); toast('High contrast ' + (document.body.classList.contains('high-contrast')?'on':'off')) };
+  $('#a11y-motion').onclick = () => { document.documentElement.classList.toggle('reduce-motion'); toast('Reduce motion ' + (document.documentElement.classList.contains('reduce-motion')?'on':'off')) };
+
+  // Mobile menu
+  $('#mobile-menu').addEventListener('click', () => {
+    const nav = $('#mobile-nav');
+    const expanded = nav.classList.toggle('hidden') === false;
+    $('#mobile-menu').setAttribute('aria-expanded', expanded);
+  });
+
+  // ---------- Data ----------
+  const JOBS = [
+    {id:1,title:"SOC Analyst II",company:"ECU Health",city:"Greenville",location:"Greenville, NC",type:"Full-time",level:"Mid",salary:"$72k–$89k",tags:["SIEM","Splunk","IR"],posted:"3d ago",desc:"Monitor, triage, and respond to security events across hybrid cloud. On-call rotation."},
+    {id:2,title:"Cybersecurity Engineer",company:"BSH Home Appliances",city:"New Bern",location:"New Bern, NC",type:"Full-time",level:"Senior",salary:"$105k–$128k",tags:["Zero Trust","OT/ICS"],posted:"1w ago",desc:"Harden manufacturing networks and implement ZTNA edge."},
+    {id:3,title:"Information Security Specialist",company:"MCB Camp Lejeune",city:"Jacksonville",location:"Jacksonville, NC",type:"Full-time",level:"Mid",salary:"$84k–$102k",tags:["RMF","STIG"],posted:"5d ago",desc:"RMF documentation, vulnerability management, and POA&M ownership."},
+    {id:4,title:"IT Security Analyst",company:"Wilson County Government",city:"Wilson",location:"Wilson, NC",type:"Full-time",level:"Mid",salary:"$68k–$81k",tags:["M365","Defender"],posted:"2d ago",desc:"Secure county services, awareness training, and phishing defense."},
+    {id:5,title:"Penetration Tester",company:"ENC252 Labs (member co.)",city:"Remote",location:"Remote (ENC preferred)",type:"Contract",level:"Senior",salary:"$85–$120/hr",tags:["Web","API","Red Team"],posted:"6d ago",desc:"Short engagements across healthcare and manufacturing."},
+    {id:6,title:"GRC Analyst",company:"Mayne Pharma",city:"Greenville",location:"Greenville, NC",type:"Full-time",level:"Mid",salary:"$78k–$95k",tags:["HIPAA","FDA 21 CFR"],posted:"4d ago",desc:"Policy, vendor risk, audits, and training content."},
+    {id:7,title:"Network Security Engineer",company:"Coastal Carolina Health",city:"New Bern",location:"New Bern, NC",type:"Full-time",level:"Senior",salary:"$98k–$118k",tags:["Palo Alto","NAC"],posted:"1d ago",desc:"Design segmentation and SD-WAN security for clinics."},
+    {id:8,title:"Cyber Defense Analyst",company:"USMC – MCIEAST",city:"Jacksonville",location:"Jacksonville, NC",type:"Full-time",level:"Mid",salary:"$79k–$96k",tags:["Threat Hunt","Suricata"],posted:"1w ago",desc:"Hunt across enterprise telemetry and support IR."},
+    {id:9,title:"Cloud Security Architect",company:"RemoteFirst ENC",city:"Remote",location:"Remote",type:"Full-time",level:"Lead",salary:"$145k–$170k",tags:["AWS","Kubernetes"],posted:"2w ago",desc:"Define guardrails, IaC scanning, and detection-as-code."},
+    {id:10,title:"Incident Responder",company:"ECU Health",city:"Greenville",location:"Greenville, NC",type:"Full-time",level:"Senior",salary:"$102k–$124k",tags:["DFIR","Velociraptor"],posted:"5d ago",desc:"Lead IR, forensics, and tabletop exercises."},
+    {id:11,title:"Junior Cybersecurity Analyst",company:"City of Wilson",city:"Wilson",location:"Wilson, NC (Hybrid)",type:"Full-time",level:"Entry",salary:"$52k–$61k",tags:["SOC","Awareness"],posted:"3d ago",desc:"Great on-ramp role with mentorship from senior staff."},
+    {id:12,title:"Security Operations Manager",company:"FRC East",city:"New Bern",location:"Havelock, NC",type:"Full-time",level:"Lead",salary:"$118k–$139k",tags:["Leadership","NIST 800-171"],posted:"1w ago",desc:"Manage SOC and continuous monitoring for depot."},
+  ];
+
+  const THREADS = store.get('enc252_threads', [
+    {id:101,cat:"Threat Intel",title:"Ransomware uptick targeting ENC healthcare",author:"sarah.m",city:"Greenville",replies:23,up:41,time:"5h ago",preview:"Careful with recent Phobos variants impersonating patient portals. IOCs inside."},
+    {id:102,cat:"Jobs",title:"Wilson County hiring — what to expect in interview?",author:"devonte",city:"Wilson",replies:12,up:18,time:"1d ago",preview:"Panel includes CISO and county IT director. Focus on M365 hardening."},
+    {id:103,cat:"Meetups",title:"New Bern January meetup — venue ideas",author:"priya",city:"New Bern",replies:9,up:27,time:"2d ago",preview:"Spencer's at max capacity. Alternatives near Broad St?"},
+    {id:104,cat:"Projects",title:"ENC252 Honeynet contributors wanted",author:"marcus",city:"Jacksonville",replies:31,up:56,time:"3d ago",preview:"We need Python + Suricata help. Weekly sync Thurs 7pm."},
+    {id:105,cat:"Threat Intel",title:"Drive-by at local marina Wi-Fi — captive portal phish",author:"luis",city:"Jacksonville",replies:7,up:14,time:"4d ago",preview:"Fake portal harvesting M365 creds. PCAP attached."},
+    {id:106,cat:"Jobs",title:"Breaking into GRC from helpdesk",author:"tasha",city:"Greenville",replies:19,up:33,time:"6d ago",preview:"Certs vs experience? Thoughts on Security+ then CISA?"},
+  ]);
+
+  const EVENTS = [
+    {id:201,title:"Threat Hunting Workshop: Living off the Land",date:"2025-12-12",start:"18:00",end:"20:30",city:"Greenville",loc:"ECU Main Campus, Science & Tech Bldg",host:"ECU Cyber Center",cap:50,rsvps:34,desc:"Hands-on with Sysmon, KQL, and Sigma rules."},
+    {id:202,title:"ENC252 Monthly Meetup",date:"2026-01-09",start:"18:30",end:"20:30",city:"New Bern",loc:"Spencer's The Corner",host:"ENC252",cap:50,rsvps:41,desc:"Lightning talks + hiring shoutouts."},
+    {id:203,title:"Cyber Range CTF",date:"2026-01-23",start:"17:00",end:"21:00",city:"Jacksonville",loc:"Coastal Carolina CC",host:"MCB Lejeune Cyber",cap:80,rsvps:58,desc:"Blue/red team scenarios, prizes for top 3."},
+    {id:204,title:"GRC & Compliance Roundtable",date:"2026-02-06",start:"12:00",end:"13:30",city:"Wilson",loc:"Wilson Chamber of Commerce",host:"Wilson County IT",cap:40,rsvps:22,desc:"HIPAA, CJIS, and NIST 800-171 tips."},
+    {id:205,title:"Secure Coding Dojo",date:"2026-02-20",start:"18:00",end:"20:00",city:"Greenville",loc:"Venture 311",host:"ENC252 DevSec",cap:35,rsvps:19,desc:"OWASP Top 10 labs in Python/JS."},
+  ];
+
+  const PROJECTS = [
+    {id:301,name:"ENC252 Honeynet",city:"Greenville",status:"Active",need:["Python","Suricata","ELK"],contrib:8,desc:"Distributed sensors across ENC to capture opportunistic scans."},
+    {id:302,name:"Small Business Security Toolkit",city:"New Bern",status:"Beta",need:["Docs","M365","Training"],contrib:5,desc:"Playbooks + templates for SMBs in ENC."},
+    {id:303,name:"Maritime Cyber Defense Sim",city:"Jacksonville",status:"Planning",need:["ICS","Docker"],contrib:3,desc:"Simulate port OT networks for training."},
+    {id:304,name:"Rural Healthcare IR Playbook",city:"Wilson",status:"Active",need:["IR","HIPAA"],contrib:6,desc:"Open IR runbooks tailored for small hospitals."},
+    {id:305,name:"OSINT Training Platform",city:"Greenville",status:"Alpha",need:["React","Intel"],contrib:4,desc:"Self-paced OSINT labs with local case studies."},
+  ];
+
+  const MEMBERS = store.get('enc252_members', [
+    {id:401,name:"Marcus Chen",role:"SOC Lead @ ECU Health",city:"Greenville",skills:["Splunk","DFIR"],bio:"Building detection-as-code for ENC health systems."},
+    {id:402,name:"Priya Rao",role:"Security Engineer @ BSH",city:"New Bern",skills:["Zero Trust","OT"],bio:"Bridging IT/OT security in manufacturing."},
+    {id:403,name:"Devonte Williams",role:"Analyst @ Wilson County",city:"Wilson",skills:["M365","Defender"],bio:"Passionate about usable security for local gov."},
+    {id:404,name:"Luis Torres",role:"Cyber Defense @ USMC",city:"Jacksonville",skills:["Threat Hunt","Suricata"],bio:"Suricata nerd, CTF organizer."},
+    {id:405,name:"Sarah Mitchell",role:"IR Consultant",city:"Greenville",skills:["IR","Velociraptor"],bio:"Tabletop enjoyer, mentor for career switchers."},
+    {id:406,name:"Tasha Green",role:"Helpdesk → GRC",city:"Greenville",skills:["Policies","Awareness"],bio:"Documenting the climb into GRC."},
+    {id:407,name:"James Patel",role:"Cloud Sec Architect",city:"Remote",skills:["AWS","K8s"],bio:"Guardrails, not gates."},
+    {id:408,name:"Aisha Brown",role:"GRC Lead @ Mayne",city:"Greenville",skills:["HIPAA","Vendor Risk"],bio:"Compliance with empathy."},
+  ]);
+
+  // ---------- Render Forum ----------
+  const forumList = $('#forum-list');
+  let activeCat = 'all';
+  function renderForum() {
+    const q = $('#forum-search').value.toLowerCase();
+    const items = THREADS.filter(t => (activeCat==='all' || t.cat===activeCat) && (t.title.toLowerCase().includes(q) || t.preview.toLowerCase().includes(q)));
+    forumList.innerHTML = items.map(t => `
+      <article class="group rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-4 hover:shadow-md transition">
+        <div class="flex items-start gap-3">
+          <button aria-label="Upvote" data-up="${t.id}" class="shrink-0 w-10 h-10 rounded-xl border border-slate-200 dark:border-white/10 grid place-items-center hover:bg-slate-50 dark:hover:bg-white/10 focus-ring">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          </button>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 text-[11px] uppercase tracking-widest text-slate-500">
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-slate-300">${t.cat}</span>
+              <span>•</span><span>${t.city}</span><span>•</span><span>${t.time}</span>
+            </div>
+            <h3 class="font-semibold mt-1 leading-snug group-hover:text-teal">${t.title}</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">${t.preview}</p>
+            <div class="mt-2 flex items-center gap-4 text-xs text-slate-500">
+              <span>by ${t.author}</span><span>•</span><span>${t.replies} replies</span><span>•</span><span>${t.up} upvotes</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    `).join('') || `<div class="text-center text-slate-500 py-12">No threads found.</div>`;
+  }
+  $('#forum-search').addEventListener('input', renderForum);
+  $$('.forum-cat').forEach(b => b.addEventListener('click', e => {
+    $$('.forum-cat').forEach(x=>x.classList.remove('bg-slate-100','dark:bg-white/10','font-medium'));
+    e.currentTarget.classList.add('bg-slate-100','dark:bg-white/10','font-medium');
+    activeCat = e.currentTarget.dataset.cat;
+    renderForum();
+  }));
+  forumList.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-up]');
+    if(!btn) return;
+    const id = +btn.dataset.up;
+    const t = THREADS.find(x=>x.id===id); t.up++; store.set('enc252_threads', THREADS); renderForum(); toast('Upvoted', t.title);
+  });
+
+  // New thread
+  $('#new-thread').addEventListener('click', () => {
+    $('#modal-title').textContent = 'Create thread';
+    $('#modal-body').innerHTML = `
+      <div class="space-y-3">
+        <div><label class="text-sm">Category</label><select id="nt-cat" class="mt-1 w-full px-3 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-navy/50"><option>Threat Intel</option><option>Jobs</option><option>Meetups</option><option>Projects</option></select></div>
+        <div><label class="text-sm">Title</label><input id="nt-title" class="mt-1 w-full px-3 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-navy/50" required></div>
+        <div><label class="text-sm">City</label><select id="nt-city" class="mt-1 w-full px-3 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-navy/50"><option>Greenville</option><option>New Bern</option><option>Jacksonville</option><option>Wilson</option><option>Remote</option></select></div>
+        <div><label class="text-sm">Details</label><textarea id="nt-body" rows="4" class="mt-1 w-full px-3 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-navy/50"></textarea></div>
+        <div class="flex justify-end gap-2 pt-2"><button id="nt-cancel" class="px-4 py-2 rounded-xl border">Cancel</button><button id="nt-save" class="px-4 py-2 rounded-xl bg-teal text-navy font-semibold">Post</button></div>
+      </div>`;
+    $('#modal').showModal();
+    $('#nt-cancel').onclick = () => $('#modal').close();
+    $('#nt-save').onclick = () => {
+      const t = {id:Date.now(),cat:$('#nt-cat').value,title:$('#nt-title').value.trim(),city:$('#nt-city').value,author:"you",replies:0,up:1,time:"now",preview:$('#nt-body').value.trim().slice(0,120)};
+      if(!t.title) return toast('Title required');
+      THREADS.unshift(t); store.set('enc252_threads', THREADS); renderForum(); $('#modal').close(); toast('Thread posted');
+    };
+  });
+
+  // ---------- Render Jobs ----------
+  function jobCard(j){
+    return `
+    <article class="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-5 hover:shadow-lg transition flex flex-col">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <h3 class="font-semibold text-lg leading-snug">${j.title}</h3>
+          <div class="text-sm text-slate-600 dark:text-slate-400">${j.company} • ${j.location}</div>
+        </div>
+        <span class="text-[11px] px-2 py-1 rounded-lg bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10">${j.posted}</span>
+      </div>
+      <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 line-clamp-2">${j.desc}</p>
+      <div class="mt-3 flex flex-wrap gap-1.5">
+        ${j.tags.map(t=>`<span class="text-[11px] px-2 py-0.5 rounded bg-teal/10 text-teal border border-teal/20">${t}</span>`).join('')}
+      </div>
+      <div class="mt-4 flex items-center justify-between">
+        <div class="text-sm"><span class="font-medium">${j.type}</span> • ${j.level} • <span class="font-mono">${j.salary}</span></div>
+        <button data-apply="${j.id}" class="px-3 py-1.5 rounded-lg bg-navy text-white dark:bg-teal dark:text-navy text-sm font-medium hover:opacity-90 focus-ring">Apply</button>
+      </div>
+    </article>`;
+  }
+  function renderJobs(){
+    const loc = $('#filter-location').value;
+    const type = $('#filter-type').value;
+    const level = $('#filter-level').value;
+    const q = $('#filter-search').value.toLowerCase();
+    const list = JOBS.filter(j =>
+      (loc==='all' || j.city===loc || (loc==='Remote' && j.city==='Remote')) &&
+      (type==='all' || j.type===type) &&
+      (level==='all' || j.level===level) &&
+      (q==='' || (j.title+ j.company+ j.tags.join(' ')).toLowerCase().includes(q))
+    );
+    $('#jobs-list').innerHTML = list.map(jobCard).join('') || `<div class="col-span-full text-center text-slate-500 py-12">No matches. Try broader filters.</div>`;
+  }
+  ['filter-location','filter-type','filter-level'].forEach(id=> $('#'+id).addEventListener('change', renderJobs));
+  $('#filter-search').addEventListener('input', renderJobs);
+  $('#jobs-list').addEventListener('click', e=>{
+    const b = e.target.closest('[data-apply]'); if(!b) return;
+    const j = JOBS.find(x=>x.id==b.dataset.apply);
+    $('#modal-title').textContent = `Apply: ${j.title}`;
+    $('#modal-body').innerHTML = `<div class="space-y-3 text-sm"><p>${j.company} — ${j.location}</p><p class="text-slate-600 dark:text-slate-300">${j.desc}</p><div class="flex gap-2"><input class="flex-1 px-3 py-2 rounded-xl border" placeholder="Your email"><button id="apply-go" class="px-4 py-2 rounded-xl bg-teal text-navy font-semibold">Continue</button></div><p class="text-xs text-slate-500">Demo only — we’ll open the employer site in production.</p></div>`;
+    $('#modal').showModal();
+    $('#apply-go').onclick = ()=>{ $('#modal').close(); toast('Application started', j.company) };
+  });
+  $('#job-alert').onclick = ()=> toast('Job alerts', 'Saved locally for demo');
+
+  // ---------- Meetups ----------
+  function fmtDate(d){ const dt = new Date(d+'T00:00:00'); return dt.toLocaleDateString(undefined,{month:'short',day:'numeric'}) }
+  function renderEvents(){
+    const rsvps = store.get('enc252_rsvps', []);
+    $('#meetups-list').innerHTML = EVENTS.map(ev=>{
+      const going = rsvps.includes(ev.id);
+      const pct = Math.min(100, Math.round((ev.rsvps + (going?1:0))/ev.cap*100));
+      return `
+      <article class="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-5 flex flex-col">
+        <div class="flex items-start justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-navy text-white dark:bg-teal dark:text-navy grid place-items-center font-bold">${fmtDate(ev.date).split(' ')[1]}</div>
+            <div>
+              <div class="text-[11px] uppercase tracking-widest text-slate-500">${ev.city} • ${fmtDate(ev.date)}</div>
+              <h3 class="font-semibold leading-snug">${ev.title}</h3>
+            </div>
+          <span class="text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-white/10 border">${ev.start}–${ev.end}</span>
+        </div>
+        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">${ev.desc}</p>
+        <div class="mt-3 text-sm text-slate-600 dark:text-slate-400">${ev.loc} — Host: ${ev.host}</div>
+        <div class="mt-4">
+          <div class="h-2 rounded-full bg-slate-200 dark:bg-white/10 overflow-hidden"><div class="h-full bg-teal" style="width:${pct}%"></div></div>
+          <div class="mt-1 text-xs text-slate-500">${ev.rsvps + (going?1:0)} / ${ev.cap} going</div>
+        </div>
+        <div class="mt-4 flex gap-2">
+          <button data-rsvp="${ev.id}" class="px-3 py-1.5 rounded-lg ${going?'bg-slate-200 dark:bg-white/10':'bg-teal text-navy'} font-medium focus-ring">${going?'Going ✓':'RSVP'}</button>
+          <button data-ics="${ev.id}" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-white/15 hover:bg-slate-50 dark:hover:bg-white/5 focus-ring">Add to Calendar</button>
+        </div>
+      </article>`;
+    }).join('');
+  }
+  $('#meetups-list').addEventListener('click', e=>{
+    const r = e.target.closest('[data-rsvp]'); const i = e.target.closest('[data-ics]');
+    if(r){ const id=+r.dataset.rsvp; let rsvps = store.get('enc252_rsvps', []); rsvps = rsvps.includes(id)? rsvps.filter(x=>x!==id):[...rsvps,id]; store.set('enc252_rsvps',rsvps); renderEvents(); toast(rsvps.includes(id)?'RSVP confirmed':'RSVP removed'); }
+    if(i){ downloadICS(+i.dataset.ics); }
+  });
+  function downloadICS(id){
+    const ev = EVENTS.find(e=>e.id===id);
+    const pad = n=> String(n).padStart(2,'0');
+    const toICS = (d,t)=> { const [y,m,da]=d.split('-'); const [h,mi]=t.split(':'); return `${y}${m}${da}T${pad(h)}${pad(mi)}00` };
+    const ics = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ENC252//CyberSec Hub//EN
+BEGIN:VEVENT
+UID:${ev.id}@enc252
+DTSTAMP:${toICS(ev.date,ev.start)}
+DTSTART:${toICS(ev.date,ev.start)}
+DTEND:${toICS(ev.date,ev.end)}
+SUMMARY:${ev.title}
+LOCATION:${ev.loc}, ${ev.city}, NC
+DESCRIPTION:${ev.desc}
+END:VEVENT
+END:VCALENDAR`;
+    const blob = new Blob([ics], {type:'text/calendar'});
+    const url = URL.createObjectURL(blob);
+    const a = Object.assign(document.createElement('a'), {href:url, download:`enc252-${ev.id}.ics`});
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    toast('Calendar file downloaded', ev.title);
+  }
+
+  // ---------- Projects ----------
+  function renderProjects(){
+    $('#projects-list').innerHTML = PROJECTS.map(p=>`
+      <article class="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-5 flex flex-col">
+        <div class="flex items-start justify-between">
+          <h3 class="font-semibold">${p.name}</h3>
+          <span class="text-[11px] px-2 py-1 rounded bg-slate-100 dark:bg-white/10 border">${p.status}</span>
+        </div>
+        <div class="text-xs text-slate-500 mt-1">${p.city} • ${p.contrib} contributors</div>
+        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 flex-1">${p.desc}</p>
+        <div class="mt-3 flex flex-wrap gap-1.5">${p.need.map(n=>`<span class="text-[11px] px-2 py-0.5 rounded bg-navy/5 dark:bg-white/5 border border-slate-200 dark:border-white/10">${n}</span>`).join('')}</div>
+        <div class="mt-4 flex gap-2">
+          <button data-join="${p.id}" class="px-3 py-1.5 rounded-lg bg-teal text-navy font-medium focus-ring">Join</button>
+          <button data-view="${p.id}" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-white/15 hover:bg-slate-50 dark:hover:bg-white/5 focus-ring">Details</button>
+        </div>
+      </article>
+    `).join('');
+  }
+  $('#projects-list').addEventListener('click', e=>{
+    const j = e.target.closest('[data-join]'); const v = e.target.closest('[data-view]');
+    if(j){ const p=PROJECTS.find(x=>x.id==j.dataset.join); toast('Joined project', p.name); }
+    if(v){ const p=PROJECTS.find(x=>x.id==v.dataset.view); $('#modal-title').textContent=p.name; $('#modal-body').innerHTML=`<div class="space-y-2 text-sm"><p>${p.desc}</p><p><strong>City:</strong> ${p.city}</p><p><strong>Needs:</strong> ${p.need.join(', ')}</p></div>`; $('#modal').showModal(); }
+  });
+  $('#propose-project').onclick = ()=>{ $('#modal-title').textContent='Propose a project'; $('#modal-body').innerHTML=`<div class="space-y-3"><input id="pp-name" placeholder="Project name" class="w-full px-3 py-2.5 rounded-xl border bg-white dark:bg-navy/50"><textarea id="pp-desc" placeholder="What are you building?" rows="3" class="w-full px-3 py-2.5 rounded-xl border bg-white dark:bg-navy/50"></textarea><div class="flex justify-end gap-2"><button onclick="document.getElementById('modal').close()" class="px-4 py-2 rounded-xl border">Cancel</button><button id="pp-save" class="px-4 py-2 rounded-xl bg-teal text-navy font-semibold">Submit</button></div></div>`; $('#modal').showModal(); $('#pp-save').onclick=()=>{ PROJECTS.unshift({id:Date.now(),name:$('#pp-name').value||'Untitled',city:'Greenville',status:'Idea',need:['Help wanted'],contrib:1,desc:$('#pp-desc').value||''}); renderProjects(); $('#modal').close(); toast('Project proposed'); }; };
+
+  // ---------- Members ----------
+  function avatar(name){ const initials = name.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase(); const bg = '#0B1D3A'; return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><rect width='100%' height='100%' fill='${bg}'/><text x='50%' y='54%' font-family='Inter' font-size='32' fill='#00BFA6' text-anchor='middle' dominant-baseline='middle'>${initials}</text></svg>`)}` }
+  function renderMembers(){
+    $('#members-grid').innerHTML = MEMBERS.map(m=>`
+      <article class="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-5">
+        <div class="flex items-center gap-3">
+          <img src="${avatar(m.name)}" alt="" class="w-12 h-12 rounded-xl ring-1 ring-slate-200 dark:ring-white/10">
+          <div>
+            <h3 class="font-semibold leading-tight">${m.name}</h3>
+            <div class="text-xs text-slate-500">${m.role} • ${m.city}</div>
+          </div>
+        </div>
+        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">${m.bio}</p>
+        <div class="mt-3 flex flex-wrap gap-1.5">${m.skills.map(s=>`<span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-white/10 border">${s}</span>`).join('')}</div>
+        <button data-profile="${m.id}" class="mt-4 w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-white/15 hover:bg-slate-50 dark:hover:bg-white/5 text-sm focus-ring">View profile</button>
+      </article>
+    `).join('');
+  }
+  $('#members-grid').addEventListener('click', e=>{
+    const b = e.target.closest('[data-profile]'); if(!b) return;
+    const m = MEMBERS.find(x=>x.id==b.dataset.profile);
+    $('#modal-title').textContent = m.name;
+    $('#modal-body').innerHTML = `<div class="flex items-start gap-4"><img src="${avatar(m.name)}" class="w-16 h-16 rounded-xl"><div><div class="text-sm text-slate-600">${m.role} — ${m.city}</div><p class="mt-2 text-sm">${m.bio}</p><div class="mt-2 flex flex-wrap gap-1">${m.skills.map(s=>`<span class='text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-white/10 border'>${s}</span>`).join('')}</div></div></div>`;
+    $('#modal').showModal();
+  });
+  $('#edit-profile').onclick = ()=>{
+    const me = store.get('enc252_me', {name:'',role:'',city:'Greenville',bio:'',skills:''});
+    $('#modal-title').textContent='Edit My Profile';
+    $('#modal-body').innerHTML=`
+      <div class="grid sm:grid-cols-2 gap-3">
+        <div><label class="text-sm">Name</label><input id="me-name" value="${me.name}" class="mt-1 w-full px-3 py-2.5 rounded-xl border bg-white dark:bg-navy/50"></div>
+        <div><label class="text-sm">Role</label><input id="me-role" value="${me.role}" class="mt-1 w-full px-3 py-2.5 rounded-xl border bg-white dark:bg-navy/50"></div>
+        <div><label class="text-sm">City</label><select id="me-city" class="mt-1 w-full px-3 py-2.5 rounded-xl border bg-white dark:bg-navy/50">${['Greenville','New Bern','Jacksonville','Wilson','Remote'].map(c=>`<option ${me.city===c?'selected':''}>${c}</option>`).join('')}</select></div>
+        <div><label class="text-sm">Skills (comma)</label><input id="me-skills" value="${me.skills}" class="mt-1 w-full px-3 py-2.5 rounded-xl border bg-white dark:bg-navy/50"></div>
+        <div class="sm:col-span-2"><label class="text-sm">Bio</label><textarea id="me-bio" rows="3" class="mt-1 w-full px-3 py-2.5 rounded-xl border bg-white dark:bg-navy/50">${me.bio}</textarea></div>
+        <div class="sm:col-span-2 flex justify-end gap-2"><button onclick="document.getElementById('modal').close()" class="px-4 py-2 rounded-xl border">Cancel</button><button id="me-save" class="px-4 py-2 rounded-xl bg-teal text-navy font-semibold">Save</button></div>
+      </div>`;
+    $('#modal').showModal();
+    $('#me-save').onclick=()=>{
+      const updated = {name:$('#me-name').value.trim()||'Anonymous', role:$('#me-role').value.trim(), city:$('#me-city').value, bio:$('#me-bio').value.trim(), skills:$('#me-skills').value.trim()};
+      store.set('enc252_me', updated);
+      const existing = MEMBERS.find(m=>m.id===9999);
+      if(existing){ Object.assign(existing, updated); } else { MEMBERS.unshift({id:9999, ...updated, skills: updated.skills.split(',').map(s=>s.trim()).filter(Boolean)}); }
+      renderMembers(); $('#modal').close(); toast('Profile saved');
+    };
+  };
+
+  // ---------- Newsletter ----------
+  $('#newsletter-form').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const email = $('#email').value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return toast('Enter a valid email');
+    const list = store.get('enc252_news', []); if(!list.includes(email)){ list.push(email); store.set('enc252_news', list); }
+    $('#email').value=''; toast('Subscribed', 'Check your inbox for confirmation');
+  });
+
+  // ---------- Init ----------
+  function init(){
+    $('#year').textContent = new Date().getFullYear();
+    renderForum(); renderJobs(); renderEvents(); renderProjects(); renderMembers();
+  }
+  document.addEventListener('DOMContentLoaded', init);
+
+  // Close modal on backdrop click (native dialog handles)
+  </script>
+
+  <!-- JSON-LD Events -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[
+      {"@type":"Event","name":"Threat Hunting Workshop: Living off the Land","startDate":"2025-12-12T18:00","endDate":"2025-12-12T20:30","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"ECU Main Campus","address":{"@type":"PostalAddress","addressLocality":"Greenville","addressRegion":"NC"}}},
+      {"@type":"Event","name":"ENC252 Monthly Meetup","startDate":"2026-01-09T18:30","endDate":"2026-01-09T20:30","location":{"@type":"Place","name":"Spencer's The Corner","address":{"@type":"PostalAddress","addressLocality":"New Bern","addressRegion":"NC"}}},
+      {"@type":"Event","name":"Cyber Range CTF","startDate":"2026-01-23T17:00","endDate":"2026-01-23T21:00","location":{"@type":"Place","name":"Coastal Carolina CC","address":{"@type":"PostalAddress","addressLocality":"Jacksonville","addressRegion":"NC"}}}
+    ]
+  }
+  </script>
+</body>
+</html>
